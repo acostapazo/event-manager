@@ -2,7 +2,7 @@
 
 <img src="https://github.com/alice-biometrics/custom-emojis/blob/master/images/alice_header.png" width=auto>
 
-Flask Petisco Application Example. Use [petisco :cookie:](https://github.com/alice-biometrics/petisco) to help you developing clean applications.
+ALiCE Event Manager.
 
 ## Table of Contents
 - [Application :rocket:](#application-rocket)
@@ -14,12 +14,11 @@ Flask Petisco Application Example. Use [petisco :cookie:](https://github.com/ali
 
 ## Application :rocket:
 
-The Application is a very simple **Task Manager** with the following entry points:
+This service do no expose any entry point. It works reading events from rabbitmq queues.
 
-- `POST /task`: Create a task, return a `task_id` :white_check_mark:
-- `GET /task`: Get a task from its `task_id` :white_check_mark:
-- `GET /task`: Get all tasks (TODO :recycle:)
-- `PUT /task/priority`: Change task priority (TODO :recycle:)
+Subscriptors:
+* TODO
+
 
 ## Installation :computer:
 
@@ -59,22 +58,6 @@ Application can be configured by *environment variables*.
 
 * Petisco :cookie:
   * `PETISCO_PORT: "8080"`
-* Persistence 💾:
-  * inmemory:
-    - `TASK_REPOSITORY_TYPE: inmemory`
-  * sqlite:
-    - `TASK_REPOSITORY_TYPE: sqlite`
-    - `SQL_SERVER: sqlite`
-    - `SQL_DATABASE: tasmanager_test.db`
-  * mysql:
-    - `TASK_REPOSITORY_TYPE: mysql`
-    - `SQL_SERVER: mysql`
-    - `SQL_DATABASE: taskmanager`
-    - `MYSQL_DATABASE: taskmanager`
-    - `MYSQL_USER: root`
-    - `MYSQL_PASSWORD: root`
-    - `MYSQL_HOST: mysql`
-    - `MYSQL_PORT: 3306`
 * Event Manager <img src="https://github.com/alice-biometrics/custom-emojis/blob/master/images/rabbitmq.png" width="16">
 :
   * `EVENT_MANAGER_TYPE: "rabbitmq"` (By default it uses a not implemented event manager)
